@@ -8,7 +8,7 @@ class_name BrushForm extends Node3D
 @export var indices : Array[int]
 
 @export_subgroup("surface")
-@export var material : Material
+@export var material : Material = null
 @export_subgroup("Experimental")
 @export var cubic_projection := false
 @export var cubic_projection_step := 1.0
@@ -57,8 +57,6 @@ func _init():
 	indices.append(0)
 	indices.append(2)
 	indices.append(3)
-	
-	material = StandardMaterial3D.new()
 
 func _enter_tree():
 	append_vatt()
