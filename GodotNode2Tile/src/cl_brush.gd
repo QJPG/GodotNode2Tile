@@ -37,6 +37,19 @@ func fix_invalid_indices(indices : Array[int], positions : Array[Vector3]) -> vo
 		fix_invalid_indices(indices, positions)
 	return
 
+func recalculate_normals(indices : Array[int], normals : Array[Vector3], positions : Array[Vector3]) -> void:
+	for i in range(0, indices.size(), 3):
+		var index = indices[i]
+		var a = indices[i + 0]
+		var b = indices[i + 1]
+		var c = indices[i + 2]
+		var plane = Plane(positions[a], positions[b], positions[c])
+		var n = plane.normal
+		
+		normals[a] = n
+		normals[b] = n
+		normals[c] = n
+
 func create_mesh_from_forms() -> void:
 	RenderingServer.mesh_clear(base)
 	
@@ -62,7 +75,7 @@ func create_mesh_from_forms() -> void:
 		var final_uvs : Array[Vector2]
 		
 		for vertex_index in data.indices:
-			var transformed_position = data.global_transform * data.positions[vertex_index]
+			var transformed_position = data.transform * data.positions[vertex_index]
 			
 			if not transformed_position in final_positions:
 				final_positions.append(transformed_position)
@@ -74,6 +87,12 @@ func create_mesh_from_forms() -> void:
 			surfaces_positions.append(transformed_position)
 		
 		fix_invalid_indices(final_indices, final_positions)
+		
+		if data.recalculated_normals:
+			recalculate_normals(final_indices, final_normals, final_positions)
+		
+		for n_i in range(final_normals.size()):
+			final_normals[n_i] *= data.surface_normal
 		
 		#print(final_indices)
 		#print(final_positions)
@@ -206,6 +225,7 @@ func _ready():
 	create_mesh_from_forms()
 
 func _process(delta):
+	RenderingServer.instance_set_visible(instance, visible)
 	RenderingServer.instance_set_transform(instance, transform)
 	
 	if Engine.is_editor_hint():

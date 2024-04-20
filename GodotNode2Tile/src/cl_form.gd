@@ -9,6 +9,9 @@ class_name BrushForm extends Node3D
 
 @export_subgroup("surface")
 @export var material : Material = null
+@export var recalculated_normals : bool = true
+@export var surface_normal : Vector3 = Vector3.ONE
+
 @export_subgroup("Experimental")
 @export var cubic_projection := false
 @export var cubic_projection_step := 1.0
