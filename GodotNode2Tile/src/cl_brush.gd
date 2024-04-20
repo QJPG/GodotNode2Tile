@@ -12,13 +12,10 @@ var body : RID
 var shape : RID
 
 func project_uv(p : Vector3, n : Vector3, step : float) -> Vector2:
-	var w = n.normalized()
+	var w = n
 	
 	var uv3d = ((p - w * p.dot(w)) + Vector3.ONE * 0.5) / 1.0
 	var uv = Vector2(uv3d.x, uv3d.z)
-	
-	if uv3d.y > .5:
-		uv.y = -uv3d.y
 	
 	return uv * step
 
@@ -80,6 +77,10 @@ func create_mesh_from_forms() -> void:
 		
 		#print(final_indices)
 		#print(final_positions)
+		
+		if data.cubic_projection:
+			for index in final_indices:
+				final_uvs[index] = project_uv(final_positions[index], data.cubic_projection_plane, data.cubic_projection_step)
 		
 		surface_data[ArrayMesh.ARRAY_VERTEX] = PackedVector3Array(final_positions)
 		surface_data[ArrayMesh.ARRAY_NORMAL] = PackedVector3Array(final_normals)

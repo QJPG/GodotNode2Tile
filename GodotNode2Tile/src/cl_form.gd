@@ -12,6 +12,7 @@ class_name BrushForm extends Node3D
 @export_subgroup("Experimental")
 @export var cubic_projection := false
 @export var cubic_projection_step := 1.0
+@export var cubic_projection_plane : Vector3 = Vector3.ONE
 
 var last_transform : Transform3D
 
