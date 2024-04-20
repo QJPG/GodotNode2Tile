@@ -8,6 +8,13 @@ Nodes:
 - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
 
 # Updates 🎉
+## Version 1.2
+- Added cubic projection UV property to BrushForm Nodes.
+ ![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
+- Added offset attachment to VertexAttachment Nodes.
+ ![demo1](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_2.gif)
+
+
 ## Version 1.1
 - Fixed problem when a triangle is formed on a single face.
 - Added "override non materials" property to the "Brush" node to replicate the null materials from all "BrushForms".
