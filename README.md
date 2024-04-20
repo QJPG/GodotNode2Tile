@@ -8,6 +8,13 @@ Nodes:
 - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
 
 # Updates 🎉
+## Version 1.3
+- Fixed surface normals.
+- Added "surface_normal" property to BrushForm Nodes.
+- Added auto-recalculate normals property.
+- Brush nodes can now change their visibility.
+- Fixed error when moving a Brush node.
+
 ## Version 1.2
 - Added cubic projection UV property to BrushForm Nodes.
  ![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
