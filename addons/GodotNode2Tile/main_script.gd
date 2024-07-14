@@ -1,6 +1,9 @@
 @tool
 extends EditorPlugin
 
+const INSPECTOR_SCRIPT:GDScript = preload("res://addons/GodotNode2Tile/src/inspector_plugin.gd")
+var inspector_plugin:EditorInspectorPlugin = INSPECTOR_SCRIPT.new()
+
 
 func _enter_tree():
 	add_custom_type("Brush",
@@ -17,9 +20,12 @@ func _enter_tree():
 		"VertexAttachment",
 		preload("../GodotNode2Tile/src/cl_vertex_attachment.gd"),
 		preload("../GodotNode2Tile/misc/icon_vatt.png"))
+	
+	add_inspector_plugin(inspector_plugin)
 
 
 func _exit_tree():
 	remove_custom_type("Brush")
 	remove_custom_type("BrushForm")
 	remove_custom_type("VertexAttachment")
+	remove_inspector_plugin(inspector_plugin)

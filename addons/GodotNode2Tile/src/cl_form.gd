@@ -1,6 +1,7 @@
 @tool
 class_name BrushForm extends Node3D
 
+
 @export_subgroup("data")
 @export var positions : Array[Vector3]
 @export var normals : Array[Vector3]
