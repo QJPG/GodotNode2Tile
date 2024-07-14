@@ -2,6 +2,9 @@
 
 ### It is recommended to use the editor's grid snap for better vertex editing.
 
+### Basic Instructions
+[Link for YouTube Instructions Video](https://youtu.be/e3lItaFOlow)
+
 Nodes:
 - ![brush](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/GodotNode2Tile/misc/icon_brush.png) Brush: is a Node3D that groups and draws all tiles, in addition to defining the collision.
 - ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/GodotNode2Tile/misc/icon_form.png) BrushForm: A surface with data for a face of the model.
