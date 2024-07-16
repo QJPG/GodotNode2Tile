@@ -10,6 +10,7 @@ func _parse_begin(object: Object) -> void:
 		var new_button:Button = Button.new()
 		new_button.text = "Add BrushForm"
 		new_button.tooltip_text = "Adds a BrushForm as a child of the Brush"
+		new_button.icon = preload("res://addons/GodotNode2Tile/misc/icon_form.png")
 		add_custom_control(new_button)
 		new_button.pressed.connect(
 		func():

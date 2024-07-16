@@ -1,6 +1,15 @@
 @tool
 class_name BrushForm extends Node3D
 
+enum Topology {
+	TRIANGLES = RenderingServer.PrimitiveType.PRIMITIVE_TRIANGLES,
+	TRIANGLE_STRIP = RenderingServer.PrimitiveType.PRIMITIVE_TRIANGLE_STRIP,
+	LINES = RenderingServer.PrimitiveType.PRIMITIVE_LINES,
+	LINE_STRIP = RenderingServer.PrimitiveType.PRIMITIVE_LINE_STRIP,
+	POINTS = RenderingServer.PrimitiveType.PRIMITIVE_POINTS,
+}
+
+@export var primitive : Topology = Topology.TRIANGLES
 
 @export_subgroup("data")
 @export var positions : Array[Vector3]
@@ -29,7 +38,7 @@ func append_vatt() -> void:
 	
 	for i in range(vcount):
 		var v = VertexAttachment.new()
-		v.name = "V_%s" % str(positions.size() - vcount)
+		v.name = "Point%s" % str(positions.size() - vcount)
 		
 		self.add_child(v, true)
 		v.owner = get_tree().edited_scene_root
@@ -74,3 +83,14 @@ func _process(delta):
 		transform = last_transform
 	
 	last_transform = transform
+	
+	if Engine.is_editor_hint():
+		var gizmos = get_gizmos()
+				
+		for i in range(gizmos.size()):
+			if gizmos[i] is EditorNode3DGizmo:
+				var gizmo = gizmos[i] as EditorNode3DGizmo
+				
+				if gizmo.get_plugin().grabbed:
+					if gizmo.get_plugin().vertex > -1 and gizmo.get_plugin().vertex < positions.size():
+						update_gizmos()

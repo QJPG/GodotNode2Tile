@@ -22,7 +22,13 @@ func _ready():
 func transform_vertex() -> void:
 	if get_parent() is BrushForm:
 		if vertex < get_parent().positions.size() and vertex > -1:
+			#if get_parent().get_parent() is Brush:
+			#	if get_parent().get_parent().enable_grid:
+			#		transform.origin = get_parent().positions[vertex].snapped(get_parent().get_parent().grid_size)
+			
 			get_parent().positions[vertex] = transform.origin# * get_parent().positions[vertex]
+			
+			
 
 func _process(delta):
 	if offset:

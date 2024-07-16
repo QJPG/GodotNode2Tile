@@ -1,10 +1,15 @@
 # Godot 4+ specific ignores
 .godot/
+.git/
 
 # Godot-specific ignores
 .import/
 export.cfg
 export_presets.cfg
+icon.svg.import
+project.godot
+icon.svg
+_test_/
 
 # Imported translations (automatically generated from CSV files)
 *.translation

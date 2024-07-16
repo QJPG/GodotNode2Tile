@@ -1,8 +1,9 @@
 @tool
 class_name Brush extends Node3D
 
-
-@export var primitive : RenderingServer.PrimitiveType = RenderingServer.PRIMITIVE_TRIANGLES
+#@export var enable_helper: bool = false
+#@export var helper_offset_y : int = 0
+#@export var primitive : RenderingServer.PrimitiveType = RenderingServer.PRIMITIVE_TRIANGLES
 @export var collision := true
 @export var override_non_materials : Material = StandardMaterial3D.new()
 
@@ -38,6 +39,8 @@ func fix_invalid_indices(indices : Array[int], positions : Array[Vector3]) -> vo
 	return
 
 func recalculate_normals(indices : Array[int], normals : Array[Vector3], positions : Array[Vector3]) -> void:
+	if positions.size() < 3:
+		return
 	for i in range(0, indices.size(), 3):
 		var index = indices[i]
 		var a = indices[i + 0]
@@ -53,8 +56,8 @@ func recalculate_normals(indices : Array[int], normals : Array[Vector3], positio
 func create_mesh_from_forms() -> void:
 	RenderingServer.mesh_clear(base)
 	
-	if primitive == RenderingServer.PRIMITIVE_MAX:
-		primitive = RenderingServer.PRIMITIVE_TRIANGLES
+	#if primitive == RenderingServer.PRIMITIVE_MAX:
+	#	primitive = RenderingServer.PRIMITIVE_TRIANGLES
 	
 	var forms = get_brush_forms()
 	var surfaces_total := 0
@@ -111,7 +114,7 @@ func create_mesh_from_forms() -> void:
 		if not material:
 			material = override_non_materials
 		
-		RenderingServer.mesh_add_surface_from_arrays(base, primitive, surface_data)
+		RenderingServer.mesh_add_surface_from_arrays(base, (data.primitive as RenderingServer.PrimitiveType), surface_data)
 		RenderingServer.mesh_surface_set_material(base, surfaces_total, material)
 	
 		surfaces_total += 1
@@ -128,11 +131,11 @@ func create_mesh_from_forms() -> void:
 func render_brush_forms() -> void:
 	RenderingServer.mesh_clear(base)
 	
-	if not primitive:
-		return
+	#if not primitive:
+	#	return
 	
-	if primitive == RenderingServer.PRIMITIVE_MAX:
-		primitive = RenderingServer.PRIMITIVE_TRIANGLES
+	#if primitive == RenderingServer.PRIMITIVE_MAX:
+	#	primitive = RenderingServer.PRIMITIVE_TRIANGLES
 	
 	var forms = get_brush_forms()
 	var indices : Array[Vector3]
@@ -202,7 +205,7 @@ func render_brush_forms() -> void:
 		data[ArrayMesh.ARRAY_TEX_UV] = PackedVector2Array(projected_uvs)
 		data[ArrayMesh.ARRAY_INDEX] = PackedInt32Array(local_indices)
 		
-		RenderingServer.mesh_add_surface_from_arrays(base, primitive, data)
+		RenderingServer.mesh_add_surface_from_arrays(base, (form_data.primitive as RenderingServer.PrimitiveType), data)
 		RenderingServer.mesh_surface_set_material(base, surfaces, form_data.material)
 	
 		surfaces += 1
