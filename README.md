@@ -13,6 +13,14 @@ Nodes:
 ![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
 
 # Changelogs 🎉
+## Version 1.4
+- Fixed bugs.
+- Added Vertex Gizmo.
+- Added an "Add BrushForm" button in the inspector (by Smorty10).
+- Now a "BrushForm" can be drawn with a separate primitive type.
+  ![image](https://github.com/user-attachments/assets/5cb66878-ba3c-444c-a46d-65fe1bbe2f32)
+
+
 ## Version 1.3
 - Fixed surface normals.
 - Added "surface_normal" property to BrushForm Nodes.
