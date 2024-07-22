@@ -13,6 +13,11 @@ Nodes:
 ![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
 
 # Changelogs 🎉
+## Version 1.5
+- Added UV editor to BrushForm Node.
+  ![image](https://github.com/user-attachments/assets/9e580b55-5190-422d-989e-9c079262fea9)
+
+
 ## Version 1.4
 - Fixed bugs.
 - Added Vertex Gizmo.
