@@ -2,21 +2,22 @@
 
 ### It is recommended to use the editor's grid snap for better vertex editing.
 
-### Basic Instructions
-[Link for YouTube Instructions Video](https://youtu.be/kbJMkVaKiGk)
+> ### Basic Instructions
+> [Link for YouTube Instructions Video](https://youtu.be/kbJMkVaKiGk)
 
 
-Nodes:
-- ![brush](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_brush.png) Brush: is a Node3D that groups and draws all tiles, in addition to defining the collision.
-- ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_form.png) BrushForm: A surface with data for a face of the model.
-- ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
+> Nodes:
+> - ![brush](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_brush.png) Brush: is a Node3D that groups and draws all tiles, in > addition to defining the collision.
+> - ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_form.png) BrushForm: A surface with data for a face of the model.
+> - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
 
 ![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
 
-# Changelogs 🎉
+> # Changelogs 🎉
 ## Version 1.5
 - Added UV editor to BrushForm Node.
-  ![image](https://github.com/user-attachments/assets/9e580b55-5190-422d-989e-9c079262fea9)
+
+  <img src="https://github.com/user-attachments/assets/b3531f7a-dd7b-4837-8fa7-3ebdb61ae4ae" width="556">
 
 
 ## Version 1.4
