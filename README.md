@@ -11,7 +11,8 @@
 > - ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_form.png) BrushForm: A surface with data for a face of the model.
 > - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
 
-![demo](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/128dbe646975a855bd1e33eb9ebe396f7b60de8b/pic_1.png)
+![image](https://github.com/user-attachments/assets/2864452d-62cc-428f-bb6c-cbc8fa6194c9)
+
 
 > # Changelogs 🎉
 ## Version 1.5
