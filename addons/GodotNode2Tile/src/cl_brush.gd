@@ -125,7 +125,8 @@ func create_mesh_from_forms() -> void:
 		
 		if poly_faces.get_faces().size() > 0:
 			PhysicsServer3D.shape_set_data(shape, {
-				"faces": poly_faces.get_faces()
+				"faces": poly_faces.get_faces(),
+				"backface_collision": true,
 			})
 
 func render_brush_forms() -> void:
