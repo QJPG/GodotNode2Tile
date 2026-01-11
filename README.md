@@ -1,20 +1,29 @@
 # Godot Node2Tile is based on Crocotile 3d where it uses Godot's own editor to create fast levels. 📐
 
-### It is recommended to use the editor's grid snap for better vertex editing.
+### ⚠️ It is recommended to use the editor's grid snap for better vertex editing.
 
-> ### Basic Instructions
-> [Link for YouTube Instructions Video](https://youtu.be/kbJMkVaKiGk)
+> ### Editing a tile
+<img width="118" height="192" alt="image" src="https://github.com/user-attachments/assets/58cbbb23-c7a3-4c11-8a13-0c22f973195d" /><img width="590" height="191" alt="image" src="https://github.com/user-attachments/assets/c5d9fb03-3dd2-48de-aadc-a562224a038b" />
+
+> Choose the dominant vertex in the "offset" property. Every time the dominant vertex moves, the other will move along with it.
+<img width="267" height="153" alt="image" src="https://github.com/user-attachments/assets/8ea245ef-59cf-45f9-8a4d-3a9044a1c20a" />
 
 
-> Nodes:
-> - ![brush](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_brush.png) Brush: is a Node3D that groups and draws all tiles, in > addition to defining the collision.
-> - ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_form.png) BrushForm: A surface with data for a face of the model.
-> - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: is an optional node that allows changing the shape’s vertices
+> Composition
+> - ![brush](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_brush.png) Brush: It is a node that groups all the BrushForms to be drawn (optionally applying a collision).
+> - ![form](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_form.png) BrushForm: It is a node that creates a surface for a tile. Each vertex can be modified.
+> - ![vatt](https://raw.githubusercontent.com/QJPG/GodotNode2Tile/main/addons/GodotNode2Tile/misc/icon_vatt.png) VertexAttachment: It is a node that allows you to specify which vertex of a BrushForm will be modified. It also allows you to attach another VertexAttachment to join multiple tiles into one.
 
 ![image](https://github.com/user-attachments/assets/2864452d-62cc-428f-bb6c-cbc8fa6194c9)
+> To modify the UV of a tile (BrushForm), you first need to add a material that has a texture in "albedo_texture".
+<img width="259" height="130" alt="image" src="https://github.com/user-attachments/assets/d5bd642a-bd7e-4083-b80a-a02edd0c14fd" />
 
 
 > # Changelogs 🎉
+## Version 1.6
+- Fixed bugs.
+- Updated documentation.
+
 ## Version 1.5
 - Added UV editor to BrushForm Node.
 
